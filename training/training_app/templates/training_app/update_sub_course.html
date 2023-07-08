@@ -1,0 +1,14 @@
+{% extends 'training_app/base.html' %}
+{% block title %}
+Update Sub Course
+{% endblock %}
+{% block content %}
+<h1>Update Sub Course</h1>
+<div class="form-group">
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <button class="btn btn-primary">Update</button>
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'training_app/base.html' %}
+{% load static %}
+{% block title %}
+Read Sub Course
+{% endblock %}
+{% block content %}
+
+		<!-- Start Page Title Area -->
+		<div class="page-title-area">
+			<div class="container">
+				<div class="page-shape-wrap">
+					<div class="page-title-content">
+						<h2>{{ band.name }}</h2>
+
+						<ul>
+							<li>
+								<a href="{% url 'home' %}">
+									Home
+								</a>
+							</li>
+
+							<li class="active">
+								Module Detail
+							</li>
+						</ul>
+					</div>
+
+					<img src="{% static 'training_app/images/page-bg-shape-1.png' %}" alt="Image" class="shape shape-1" data-speed="0.04" data-revert="true">
+					<img src="{% static 'training_app/images/page-bg-shape-7.png' %}" alt="Image" class="shape shape-2" data-speed="0.04" data-revert="true">
+				</div>
+			</div>
+		</div>
+		<!-- End Page Title Area -->
+<div class="card">
+
+  <div class="card-header">
+    <strong><h2>{{ band.name }} </h2></strong>
+  </div>
+  <div class="card-body">
+    <p class="card-text">
+       {{ band.description|safe }}
+    </p>
+  </div>
+</div>
+
+{% endblock %}

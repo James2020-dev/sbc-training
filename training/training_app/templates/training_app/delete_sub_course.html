@@ -1,0 +1,14 @@
+{% extends 'training_app/base.html' %}
+{% block title %}
+Delete Sub Course
+{% endblock %}
+{% block content %}
+<h1>Delete Sub Course</h1>
+<h1>Do you want to Delete {{ band.name }}</h1>
+<div class="form-group">
+<form method="post">
+    {% csrf_token %}
+    <button class="btn btn-danger">Delete</button>
+</form>
+</div>
+{% endblock %}

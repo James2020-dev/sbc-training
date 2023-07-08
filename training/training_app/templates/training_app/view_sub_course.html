@@ -1,0 +1,69 @@
+{% extends 'training_app/base.html' %}
+{% load static %}
+{% block title %}
+{{ courses.name }}
+{% endblock %}
+
+{% block content %}
+
+		<!-- Start Page Title Area -->
+		<div class="page-title-area">
+			<div class="container">
+				<div class="page-shape-wrap">
+					<div class="page-title-content">
+						<h2>Sub Modules</h2>
+
+						<ul>
+							<li>
+								<a href="{% url 'home' %}">
+									Home
+								</a>
+							</li>
+
+							<li class="active">
+								Sub Module
+							</li>
+						</ul>
+					</div>
+
+					<img src="{% static 'training_app/images/page-bg-shape-1.png' %}" alt="Image" class="shape shape-1" data-speed="0.04" data-revert="true">
+					<img src="{% static 'training_app/images/page-bg-shape-7.png' %}" alt="Image" class="shape shape-2" data-speed="0.04" data-revert="true">
+				</div>
+			</div>
+		</div>
+		<!-- End Page Title Area -->
+<div class="card">
+  <div class="card-header">
+    <strong>{{ courses }}<h2> SUB MODULES </h2></strong>
+  </div>
+  <div class="card-body">
+    <p class="card-text">
+       <table class="table table-striped" align="left">
+ <thread>
+     <tr>
+         <th>No</th>
+         <th>Sub-Courses</th>
+         <th>Edit</th>
+         <th>Delete</th>
+     </tr>
+ </thread>
+         {% for x in subcourses %}
+        <tr align="left">
+            <th scope="row">{{ forloop.counter }}</th>
+            <td><a href="{% url 'read_sub_course' x.id %}"><strong>{{ x.name }}</strong></a> </td>
+            <td><a href="{% url 'update_sub_course' x.pk %}">Edit</a> </td>
+            <td><a href="{% url 'delete_sub_course' x.pk %}">Delete</a> </td>
+        </tr>
+         {% endfor %}
+</table>
+    </p>
+  </div>
+</div>
+
+
+<br>
+<a class="btn btn-sn btn-secondary" href="{% url 'courses' %}">Back</a><br><br>
+{% if user.is_authenticated %}
+<a class="btn btn-sm btn-primary" href="{% url 'add-sub-course' %}">Add Sub Module</a>
+{% endif %}
+{% endblock %}

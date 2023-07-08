@@ -1,0 +1,174 @@
+{% extends 'training_app/base.html' %}
+{% load static %}
+{% block content %}
+
+  <div class="container">
+  <!-- Start Preloader Area -->
+		<div class="preloader">
+            <div class="content">
+                <div class="box"></div>
+            </div>
+        </div>
+		<!-- End Preloader Area -->
+
+		<!-- Start Navbar Area -->
+
+		<!-- End Navbar Area -->
+
+		<!-- Start Banner Area -->
+		<div class="banner-area bg-color-f7f8f9 ptb-100">
+			<div class="container-fluid">
+				<div class="row align-items-center">
+					<div class="col-lg-6">
+						<div class="banner-content">
+							<span class="top-title">Best Learning Platform</span>
+							<h1>East Africa Child Rights Trust <span>Network.</span></h1>
+							<p>Welcome to East Africa Child Rights Trust Network. We...</p>
+							<div class="banner-btn">
+								{% if user.is_authenticated %}
+								<a href="{% url 'our-courses' %}" class="default-btn">
+									Find Our Modules
+									<i class="ri-search-line"></i>
+								</a>
+								{% endif %}
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-6">
+						<div class="banner-img">
+<!--							<img src="{% static 'training_app/images/banner/banner-img.png' %}" alt="Image">-->
+							<img src="{% static 'training_app/images/banner/banner-img-shape.png' %}" class="banner-img-shape" alt="Image">
+							<img src="{% static 'training_app/images/banner/shape-8.png' %}" class="shape shape-8" alt="Image">
+							<img src="{% static 'training_app/images/banner/shape-9.png' %}" class="shape shape-9" alt="Image">
+
+<!--							<div class="total-member">-->
+<!--								<img src="{% static 'training_app/images/banner/member-icon.png' %}" alt="Image">-->
+<!--								<span class="title">Total Member</span>-->
+<!--								<span class="man">16k</span>-->
+<!--								<ul class="total-member-list">-->
+<!--									<li>-->
+<!--										<a href="#">-->
+<!--											<img src="{% static 'training_app/images/banner/member-1.png' %}" alt="Image">-->
+<!--										</a>-->
+<!--									</li>-->
+<!--									<li>-->
+<!--										<a href="#">-->
+<!--											<img src="{% static 'training_app/images/banner/member-2.png' %}" alt="Image">-->
+<!--										</a>-->
+<!--									</li>-->
+<!--									<li>-->
+<!--										<a href="#">-->
+<!--											<img src="{% static 'training_app/images/banner/member-3.png' %}" alt="Image">-->
+<!--										</a>-->
+<!--									</li>-->
+<!--									<li>-->
+<!--										<a href="#">-->
+<!--											<img src="{% static 'training_app/images/banner/member-4.png' %}" alt="Image">-->
+<!--										</a>-->
+<!--									</li>-->
+<!--									<li>-->
+<!--										<a href="#">-->
+<!--											<img src="{% static 'training_app/images/banner/member-5.png' %}" alt="Image">-->
+<!--										</a>-->
+<!--									</li>-->
+<!--								</ul>-->
+<!--							</div>-->
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="shape shape-1" data-speed="0.04" data-revert="true">
+				<img src="{% static 'training_app/images/banner/shape-1.png' %}" alt="Image">
+			</div>
+			<div class="shape shape-2" data-speed="0.05" data-revert="true">
+				<img src="{% static 'training_app/images/banner/shape-2.png' %}" alt="Image">
+			</div>
+			<div class="shape shape-3" data-speed="0.06" data-revert="true">
+				<img src="{% static 'training_app/images/banner/shape-3.png' %}" alt="Image">
+			</div>
+			<div class="shape shape-4" data-speed="0.07" data-revert="true">
+				<img src="{% static 'training_app/images/banner/shape-4.png' %}" alt="Image">
+			</div>
+			<div class="shape shape-5" data-speed="0.08" data-revert="true">
+				<img src="{% static 'training_app/images/banner/shape-5.png' %}" alt="Image">
+			</div>
+			<div class="shape shape-6" data-speed="0.09" data-revert="true">
+				<img src="{% static 'training_app/images/banner/shape-6.png' %}" alt="Image">
+			</div>
+			<div class="shape shape-7" data-speed="0.09" data-revert="true">
+				<img src="{% static 'training_app/images/banner/shape-7.png' %}" alt="Image">
+			</div>
+		</div>
+		<!-- End Banner Area -->
+
+		<!-- Start Features Area -->
+
+		<!-- End Features Area -->
+
+		<!-- Start Category Area -->
+
+		<!-- End Category Area -->
+
+		<!-- Start Online Courses Area -->
+
+		<!-- End Online Courses Area -->
+
+		<!-- Start Our Instructors Area -->
+
+		<!-- End Our Instructors Area -->
+
+		<!-- Start Motivation Area -->
+
+		<!-- End Motivation Area -->
+
+		<!-- Start Your Life Area -->
+
+		<!-- End Your Life Area -->
+
+		<!-- Start Testimonials Area -->
+
+		<!-- End Testimonials Area -->
+
+		<!-- Start Blog Area -->
+
+		<!-- End Blog Area -->
+
+		<!-- Start Subscribe Area -->
+
+		<!-- End Subscribe Area -->
+  <br/>
+  <br/>
+
+   <!-- Start Footer Area -->
+
+		<!-- End Footer Area -->
+
+		<!-- Start Go Top Area -->
+		<div class="go-top">
+			<i class="ri-arrow-up-s-fill"></i>
+			<i class="ri-arrow-up-s-fill"></i>
+		</div>
+		<!-- End Go Top Area -->
+
+        <!-- Links of JS File -->
+        <script src="{% static 'training_app/js/jquery.min.js' %}"></script>
+        <script src="{% static 'training_app/js/bootstrap.bundle.min.js' %}"></script>
+		<script src="{% static 'training_app/js/meanmenu.min.js' %}"></script>
+		<script src="{% static 'training_app/js/owl.carousel.min.js' %}"></script>
+		<script src="{% static 'training_app/js/carousel-thumbs.min.js' %}"></script>
+        <script src="{% static 'training_app/js/aos.min.js' %}"></script>
+        <script src="{% static 'training_app/js/appear.min.js' %}"></script>
+        <script src="{% static 'training_app/js/odometer.min.js' %}"></script>
+        <script src="{% static 'training_app/js/magnific-popup.min.js' %}"></script>
+        <script src="{% static 'training_app/js/before-after.min.js' %}"></script>
+		<script src="{% static 'training_app/js/tween-max.min.js' %}"></script>
+		<script src="{% static 'training_app/js/form-validator.min.js' %}"></script>
+		<script src="{% static 'training_app/js/contact-form-script.js' %}"></script>
+		<script src="{% static 'training_app/js/ajaxchimp.min.js' %}"></script>
+		<script src="{% static 'training_app/js/custom.js' %}"></script>
+      </div>
+
+{% endblock %}

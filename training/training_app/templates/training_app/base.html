@@ -1,0 +1,362 @@
+{% load static %}
+
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+<!--    <meta charset="utf-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<!-- Links Of CSS File -->
+		<link rel="stylesheet" href="{% static 'training_app/css/bootstrap.min.css' %}">
+		<link rel="stylesheet" href="{% static 'training_app/css/owl.theme.default.min.css' %}">
+		<link rel="stylesheet" href="{% static 'training_app/css/owl.carousel.min.css' %}">
+		<link rel="stylesheet" href="{% static 'training_app/css/flaticon.css' %}">
+		<link rel="stylesheet" href="{% static 'training_app/css/remixicon.css' %}">
+		<link rel="stylesheet" href="{% static 'training_app/css/meanmenu.min.css' %}">
+		<link rel="stylesheet" href="{% static 'training_app/css/aos.min.css' %}">
+		<link rel="stylesheet" href="{% static 'training_app/css/odometer.min.css' %}">
+		<link rel="stylesheet" href="{% static 'training_app/css/magnific-popup.min.css' %}">
+		<link rel="stylesheet" href="{% static 'training_app/css/before-after.min.css' %}">
+		<link rel="stylesheet" href="{% static 'training_app/css/style.css' %}">
+		<link rel="stylesheet" href="{% static 'training_app/css/dark.css' %}">
+		<link rel="stylesheet" href="{% static 'training_app/css/responsive.css' %}">
+
+    <title>{% block title %}
+      SBC
+      {% endblock %}
+    </title>
+  </head>
+  <body>
+  <div class="container">
+  <!-- Start Preloader Area -->
+		<div class="preloader">
+            <div class="content">
+                <div class="box"></div>
+            </div>
+        </div>
+		<!-- End Preloader Area -->
+
+		<!-- Start Navbar Area -->
+		<div class="navbar-area">
+			<div class="mobile-responsive-nav">
+				<div class="container">
+					<div class="mobile-responsive-menu">
+						<div class="logo">
+							<a href="{% url 'home' %}">
+								<img src="{% static 'training_app/images/pronsoftlogo_final2.ico' %}" class="main-logo" alt="logo">
+							<img src="{% static 'training_app/images/pronsoftlogo_final2.ico' %}" class="white-logo" alt="logo">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="desktop-nav">
+				<div class="container-fluid">
+					<nav class="navbar navbar-expand-md navbar-light">
+						<a class="navbar-brand" href="{% url 'home' %}">
+							<img src="{% static 'training_app/images/pronsoftlogo_final2.ico' %}" class="main-logo" alt="logo">
+							<img src="{% static 'training_app/images/pronsoftlogo_final2.ico' %}" class="white-logo" alt="logo">
+						</a>
+
+						<div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+							<ul class="navbar-nav m-auto">
+								<li class="nav-item">
+									<a href="{% url 'home' %}" class="nav-link dropdown-toggle active">
+										Home
+									</a>
+
+									<ul class="dropdown-menu">
+										<li class="nav-item">
+											<a href="{% url 'home' %}" class="nav-link active">Home</a>
+										</li>
+
+									</ul>
+								</li>
+								{% if user.is_authenticated %}
+								<li class="nav-item">
+									<a href="#" class="nav-link dropdown-toggle">
+										Our Modules
+									</a>
+
+									<ul class="dropdown-menu">
+										<li class="nav-item">
+											<a href="{% url 'our-courses' %}" class="nav-link">Modules</a>
+										</li>
+										<li class="nav-item">
+											<a href="{% url 'add_course' %}" class="nav-link">Add Module</a>
+										</li>
+									</ul>
+									<li class="nav-item">
+									<a href="{% url 'logout' %}" class="nav-link">Log Out</a>
+								</li>
+								</li>
+								{% else %}
+
+
+<!--								<li class="nav-item">-->
+<!--									<a href="contact-us.html" class="nav-link">Contact Us</a>-->
+<!--								</li>-->
+
+							</ul>
+<li>
+										<a href="{% url 'register_user' %}" class="Register">
+											<i class="ri-login-box-line"></i>
+											Register
+										</a>
+									</li>
+							<div class="others-options">
+								<ul class="d-flex justify-content-between align-items-center">
+									<li>
+										<a href="{% url 'login' %}" class="default-btn">
+											Log In
+											<i class="ri-edit-line"></i>
+										</a>
+									</li>
+								</ul>
+								{% endif %}
+							</div>
+						</div>
+					</nav>
+				</div>
+			</div>
+
+			<div class="others-option-for-responsive">
+				<div class="container">
+					<div class="dot-menu">
+						<div class="inner">
+							<div class="circle circle-one"></div>
+							<div class="circle circle-two"></div>
+							<div class="circle circle-three"></div>
+						</div>
+					</div>
+
+					<div class="container">
+						<div class="option-inner">
+							<div class="others-options justify-content-center d-flex align-items-center">
+								<ul>
+									<li>
+										<a href="register.html" class="sign-in">
+											<i class="ri-login-box-line"></i>
+											Sign In
+										</a>
+									</li>
+									<li>
+										<a href="our-courses.html" class="default-btn">
+											Get Started
+											<i class="ri-edit-line"></i>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Navbar Area -->
+
+		<!-- Start Banner Area -->
+
+		<!-- End Banner Area -->
+
+		<!-- Start Features Area -->
+
+		</div>
+		<!-- End Features Area -->
+
+		<!-- Start Category Area -->
+
+		<!-- End Category Area -->
+
+		<!-- Start Online Courses Area -->
+
+		<!-- End Online Courses Area -->
+
+		<!-- Start Our Instructors Area -->
+
+		<!-- End Our Instructors Area -->
+
+		<!-- Start Motivation Area -->
+
+		<!-- End Motivation Area -->
+
+		<!-- Start Your Life Area -->
+
+		<!-- End Your Life Area -->
+
+		<!-- Start Testimonials Area -->
+
+		<!-- End Testimonials Area -->
+
+		<!-- Start Blog Area -->
+
+		<!-- End Blog Area -->
+
+		<!-- Start Subscribe Area -->
+
+		<!-- End Subscribe Area -->
+  <br/>
+  <br/>
+  <div class="container">
+     {% if messages %}
+      {% for message in messages %}
+
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>{{ message }}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+      {% endfor %}
+      {% endif %}
+  {% block content %}
+
+  {% endblock %}
+</div>
+   <!-- Start Footer Area -->
+		<div class="footer-area">
+			<div class="pt-100 pb-70">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-3 col-sm-6">
+							<div class="single-footer-widget">
+								<a href="{% url 'home' %}">
+									<img src="{% static 'training_app/images/pronsoftlogo_final2.ico' %}" alt="Image">
+								</a>
+
+								<p>This is East Africa Child Rights Trust Network. We...</p>
+
+								<ul class="social-link">
+									<li>
+										<a href="https://www.facebook.com/" target="_blank">
+											<i class="ri-facebook-fill"></i>
+										</a>
+									</li>
+									<li>
+										<a href="https://www.twitter.com/" target="_blank">
+											<i class="ri-twitter-fill"></i>
+										</a>
+									</li>
+									<li>
+										<a href="https://www.instagram.com/" target="_blank">
+											<i class="ri-instagram-line"></i>
+										</a>
+									</li>
+									<li>
+										<a href="https://www.google.com/" target="_blank">
+											<i class="ri-google-fill"></i>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+<!--						<div class="col-lg-3 col-sm-6">-->
+<!--							<div class="single-footer-widget">-->
+<!--								<h3>Useful Link</h3>-->
+
+<!--								<ul class="use-link">-->
+<!--									<li>-->
+<!--										<a href="about-us.html">-->
+<!--											<i class="ri-arrow-right-line"></i>-->
+<!--											About Us-->
+<!--										</a>-->
+<!--									</li>-->
+<!--									<li>-->
+<!--										<a href="blog.html">-->
+<!--											<i class="ri-arrow-right-line"></i>-->
+<!--											Blog-->
+<!--										</a>-->
+<!--									</li>-->
+<!--									<li>-->
+<!--										<a href="blog-details.html">-->
+<!--											<i class="ri-arrow-right-line"></i>-->
+<!--											Blog Details-->
+<!--										</a>-->
+<!--									</li>-->
+<!--									<li>-->
+<!--										<a href="our-courses.html">-->
+<!--											<i class="ri-arrow-right-line"></i>-->
+<!--											Our Courses-->
+<!--										</a>-->
+<!--									</li>-->
+<!--&lt;!&ndash;									<li>&ndash;&gt;-->
+<!--&lt;!&ndash;										<a href="terms-conditions.html">&ndash;&gt;-->
+<!--&lt;!&ndash;											<i class="ri-arrow-right-line"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;											Terms Conditions&ndash;&gt;-->
+<!--&lt;!&ndash;										</a>&ndash;&gt;-->
+<!--&lt;!&ndash;									</li>&ndash;&gt;-->
+
+<!--								</ul>-->
+<!--							</div>-->
+<!--						</div>-->
+
+<!--						<div class="col-lg-3 col-sm-6">-->
+<!--							<div class="single-footer-widget">-->
+<!--								<h3>Information</h3>-->
+
+<!--								<ul class="information-link">-->
+<!--									<li>-->
+<!--										<i class="ri-headphone-line"></i>-->
+<!--										<span>Call Us</span>-->
+<!--										<a href="tel:+800-388-80-90">+800 388 80 90</a>-->
+<!--									</li>-->
+<!--									<li>-->
+<!--										<i class="ri-mail-line"></i>-->
+<!--										<span>Email Us</span>-->
+<!--										<a href="mailto:hello@jufa.com">hello@jufa.com</a>-->
+<!--									</li>-->
+<!--									<li>-->
+<!--										<i class="ri-map-pin-line"></i>-->
+<!--										<span>Location</span>-->
+<!--										PO Box 567 Hostin st. 433, Los Angeles California, US.-->
+<!--									</li>-->
+<!--								</ul>-->
+<!--							</div>-->
+<!--						</div>-->
+					</div>
+				</div>
+			</div>
+
+			<!-- Start Copyright Area -->
+			<div class="copy-right-area">
+				<div class="container">
+					<div class="copy-right-content">
+						<p>@Jufa. Design & Developed By <a href="https://hibootstrap.com/" target="_blank">HiBootstrap</a></p>
+					</div>
+				</div>
+			</div>
+			<!-- End Copyright Area -->
+		</div>
+		<!-- End Footer Area -->
+
+		<!-- Start Go Top Area -->
+		<div class="go-top">
+			<i class="ri-arrow-up-s-fill"></i>
+			<i class="ri-arrow-up-s-fill"></i>
+		</div>
+		<!-- End Go Top Area -->
+
+        <!-- Links of JS File -->
+        <script src="{% static 'training_app/js/jquery.min.js' %}"></script>
+        <script src="{% static 'training_app/js/bootstrap.bundle.min.js' %}"></script>
+		<script src="{% static 'training_app/js/meanmenu.min.js' %}"></script>
+		<script src="{% static 'training_app/js/owl.carousel.min.js' %}"></script>
+		<script src="{% static 'training_app/js/carousel-thumbs.min.js' %}"></script>
+        <script src="{% static 'training_app/js/aos.min.js' %}"></script>
+        <script src="{% static 'training_app/js/appear.min.js' %}"></script>
+        <script src="{% static 'training_app/js/odometer.min.js' %}"></script>
+        <script src="{% static 'training_app/js/magnific-popup.min.js' %}"></script>
+        <script src="{% static 'training_app/js/before-after.min.js' %}"></script>
+		<script src="{% static 'training_app/js/tween-max.min.js' %}"></script>
+		<script src="{% static 'training_app/js/form-validator.min.js' %}"></script>
+		<script src="{% static 'training_app/js/contact-form-script.js' %}"></script>
+		<script src="{% static 'training_app/js/ajaxchimp.min.js' %}"></script>
+		<script src="{% static 'training_app/js/custom.js' %}"></script>
+      </div>
+  </body>
+</html>

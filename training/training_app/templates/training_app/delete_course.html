@@ -1,0 +1,21 @@
+{% extends 'training_app/base.html' %}
+{% block title %}
+Delete {{ courses.name }}?
+{% endblock %}
+
+{% block content %}
+
+<div class="row mt-2">
+    <div class="col-12" style="text-align: center;">
+        <h4>Are you sure You want to Delete : {{ courses.name }} ?</h4>
+        <form method="post" action="">
+            {% csrf_token %}
+
+            <button class="btn btn-danger">Delete</button>
+            <hr>
+
+            <a class="btn btn-sm btn-secondary" href="{% url 'our-courses' %}">Back</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

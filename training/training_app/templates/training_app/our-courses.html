@@ -1,0 +1,146 @@
+<!--<editor-fold desc="Description">-->
+{% extends 'training_app/base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Start Preloader Area -->
+<!--<div class="preloader">-->
+<!--    <div class="content">-->
+<!--        <div class="box"></div>-->
+<!--    </div>-->
+<!--</div>-->
+<!-- End Preloader Area -->
+
+<!-- Start Page Title Area -->
+<div class="page-title-area">
+    <div class="container">
+        <div class="page-shape-wrap">
+            <div class="page-title-content">
+                <h2>Modules</h2>
+
+                <ul>
+                    <li>
+                        <a href="{% url 'home' %}">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="active">
+                        Our Modules
+                    </li>
+                </ul>
+            </div>
+
+            <img src="{% static 'training_app/images/page-bg-shape-1.png' %}" alt="Image" class="shape shape-1"
+                 data-speed="0.04" data-revert="true">
+            <img src="{% static 'training_app/images/page-bg-shape-4.png' %}" alt="Image" class="shape shape-2"
+                 data-speed="0.04" data-revert="true">
+        </div>
+    </div>
+</div>
+<!-- End Page Title Area -->
+
+<div class="online-courses-area ptb-100">
+    <a class="btn btn-primary" href="{% url 'add_course' %}">Add Module</a><hr>
+    <div class="container">
+        <div class="row justify-content-center">
+            {% for course in course_list %}
+            <div class="col-xl-4 col-md-6">
+                <div class="single-courses-item">
+                    <div class="courses-img">
+                        <a href="courses.html">
+                            <img src="{% static 'training_app/images/courses/courses-1.jpg' %}" alt="Image">
+                        </a>
+
+                        <ul>
+                            <li>
+                                <a href="{% url 'sub_courses3' course.pk %}">Detail</a>
+                            </li>
+                            <li class="bg-5696fa">
+<!--                                <span>-15%</span>-->
+                            </li>
+                        </ul>
+
+                        <img src="{% static 'training_app/images/courses/teacher-1.png' %}" alt="Image" class="teacher">
+                    </div>
+
+                    <div class="courses-content">
+
+                        <h3>
+                            <a href="{% url 'sub_courses3' course.pk %}">
+                                {{ course }}<br>
+                            </a>
+                        </h3>
+
+                        <ul class="courses-time d-flex justify-content-between">
+<!--                            <li>-->
+<!--                                <i class="ri-time-fill"></i>-->
+
+<!--                            </li>-->
+                            <!--									<li>-->
+                            <!--										<i class="ri-vidicon-fill"></i>-->
+                            <!--										15 Lectures-->
+                            <!--									</li>-->
+                            <!--									<li>-->
+                            <!--										<i class="ri-list-check"></i>-->
+                            <!--										Beginer-->
+                            <!--									</li>-->
+                        </ul>
+                    </div>
+                    <ul class="courses-fee d-flex justify-content-between">
+                        <li>
+                             <a class="btn btn-sm btn-primary" href="{% url 'update_course' course.id %}">Edit</a>
+                        </li>
+                        <li><a class="btn btn-sm btn-danger" href="{% url 'delete_course' course.pk %}">Delete</a></li>
+                        <li>
+                            <a href="{% url 'sub_courses3' course.pk %}" class="read-more">
+
+                                More Details
+                                <i class="ri-arrow-right-line"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+<!--    {{ courses }}<br>-->
+<!--    <nav aria-label="Page navigation example">-->
+<!--        <ul class="pagination justify-content-center">-->
+<!--            {% if courses.has_previous %}-->
+<!--            <li class="page-item"><a class="page-link" href="?page=1">&laquo; First</a></li>-->
+<!--            <li class="page-item"></li>-->
+<!--            <a class="page-link" href="?page={{ courses.previous_page_number }}">Previous</a></i>-->
+<!--            {% endif %}-->
+
+<!--            &lt;!&ndash; <li class="page-item disabled"> <a href="#" class="page-link"> Page {{ courses.number }} of {{ courses.paginator.num_pages }}</a></li>&ndash;&gt;-->
+
+<!--            {% for i in nums %}-->
+<!--            <li class="pate-item"><a class="page-link" href="?page={{ forloop.counter }}">-->
+<!--                {{ forloop.counter }}</a>-->
+<!--            </li>-->
+<!--            {% endfor %}-->
+
+<!--            {% if courses.has_next %}-->
+<!--            <li class="pate-item"><a class="page-link" href="?page={{ courses.next_page_number }}">Next</a></li>-->
+<!--            <li class="page-item"><a class="page-link" href="?page={{ courses.paginator.num_pages }}">&raquo;Last</a>-->
+<!--            </li>-->
+<!--            {% endif %}-->
+<!--        </ul>-->
+<!--    </nav>-->
+</div>
+
+
+
+<!-- Start Go Top Area -->
+<div class="go-top">
+    <i class="ri-arrow-up-s-fill"></i>
+    <i class="ri-arrow-up-s-fill"></i>
+</div>
+<!-- End Go Top Area -->
+
+
+{% endblock %}
+<!--</editor-fold>-->

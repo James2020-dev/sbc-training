@@ -1,0 +1,27 @@
+{% extends 'training_app/base.html' %}
+
+{% block content %}
+<h1>Courses</h1>
+
+ <table class="table table-striped" align="left">
+ <thread>
+     <tr>
+         <th>No</th>
+         <th>Course</th>
+         <th>Edit</th>
+         <th>Delete</th>
+     </tr>
+ </thread>
+         {% for course in object_list %}
+        <tr align="left">
+            <th scope="row">{{ forloop.counter }}</th>
+            <td><a href="{% url 'sub_courses3' course.pk %}">{{ course.name }}</a> </td>
+            <td><a href="{% url 'update_course' course.pk %}">Edit</a> </td>
+            <td><a href="{% url 'delete_course' course.pk %}">Delete</a> </td>
+        </tr>
+         {% endfor %}
+</table>
+{% if user.is_authenticated %}
+<a href="{% url 'add_course' %}">Add Course</a>
+{% endif %}
+{% endblock %}
