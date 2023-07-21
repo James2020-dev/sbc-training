@@ -48,8 +48,8 @@
 					<div class="mobile-responsive-menu">
 						<div class="logo">
 							<a href="{% url 'home' %}">
-								<img src="{% static 'training_app/images/pronsoftlogo_final2.ico' %}" class="main-logo" alt="logo">
-							<img src="{% static 'training_app/images/pronsoftlogo_final2.ico' %}" class="white-logo" alt="logo">
+								<img src="{% static 'training_app/images/east_africa_child_rights_network.ico' %}" class="main-logo" alt="logo">
+							<img src="{% static 'training_app/images/east_africa_child_rights_network.ico' %}" class="white-logo" alt="logo">
 							</a>
 						</div>
 					</div>
@@ -60,8 +60,8 @@
 				<div class="container-fluid">
 					<nav class="navbar navbar-expand-md navbar-light">
 						<a class="navbar-brand" href="{% url 'home' %}">
-							<img src="{% static 'training_app/images/pronsoftlogo_final2.ico' %}" class="main-logo" alt="logo">
-							<img src="{% static 'training_app/images/pronsoftlogo_final2.ico' %}" class="white-logo" alt="logo">
+							<img src="{% static 'training_app/images/east_africa_child_rights_network.ico' %}" class="main-logo" alt="logo">
+							<img src="{% static 'training_app/images/east_africa_child_rights_network.ico' %}" class="white-logo" alt="logo">
 						</a>
 
 						<div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
@@ -88,9 +88,13 @@
 										<li class="nav-item">
 											<a href="{% url 'our-courses' %}" class="nav-link">Modules</a>
 										</li>
+										{% if user.is_authenticated %}
+											{% if user.is_superuser %}
 										<li class="nav-item">
 											<a href="{% url 'add_course' %}" class="nav-link">Add Module</a>
 										</li>
+										{% endif %}
+										{% endif %}
 									</ul>
 									<li class="nav-item">
 									<a href="{% url 'logout' %}" class="nav-link">Log Out</a>
@@ -104,7 +108,8 @@
 <!--								</li>-->
 
 							</ul>
-<li>
+						<li>
+
 										<a href="{% url 'register_user' %}" class="Register">
 											<i class="ri-login-box-line"></i>
 											Register
@@ -225,7 +230,7 @@
 						<div class="col-lg-3 col-sm-6">
 							<div class="single-footer-widget">
 								<a href="{% url 'home' %}">
-									<img src="{% static 'training_app/images/pronsoftlogo_final2.ico' %}" alt="Image">
+									<img src="{% static 'training_app/images/east_africa_child_rights_network.ico' %}" alt="Image">
 								</a>
 
 								<p>This is East Africa Child Rights Trust Network. We...</p>

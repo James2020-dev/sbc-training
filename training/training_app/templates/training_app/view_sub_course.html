@@ -34,7 +34,7 @@
 		<!-- End Page Title Area -->
 <div class="card">
   <div class="card-header">
-    <strong>{{ courses }}<h2> SUB MODULES </h2></strong>
+    <strong><h2> {{ courses }} </h2></strong>
   </div>
   <div class="card-body">
     <p class="card-text">
@@ -43,16 +43,24 @@
      <tr>
          <th>No</th>
          <th>Sub-Courses</th>
+        {% if user.is_authenticated %}
+			{% if user.is_superuser %}
          <th>Edit</th>
          <th>Delete</th>
+         {% endif %}
+         {% endif %}
      </tr>
  </thread>
          {% for x in subcourses %}
         <tr align="left">
             <th scope="row">{{ forloop.counter }}</th>
             <td><a href="{% url 'read_sub_course' x.id %}"><strong>{{ x.name }}</strong></a> </td>
+            {% if user.is_authenticated %}
+			{% if user.is_superuser %}
             <td><a href="{% url 'update_sub_course' x.pk %}">Edit</a> </td>
             <td><a href="{% url 'delete_sub_course' x.pk %}">Delete</a> </td>
+            {% endif %}
+            {% endif %}
         </tr>
          {% endfor %}
 </table>
@@ -62,8 +70,10 @@
 
 
 <br>
-<a class="btn btn-sn btn-secondary" href="{% url 'courses' %}">Back</a><br><br>
+<a class="btn btn-sn btn-secondary" href="{% url 'our-courses' %}">Back</a><br><br>
 {% if user.is_authenticated %}
+{% if user.is_superuser %}
 <a class="btn btn-sm btn-primary" href="{% url 'add-sub-course' %}">Add Sub Module</a>
+{% endif %}
 {% endif %}
 {% endblock %}

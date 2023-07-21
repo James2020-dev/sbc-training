@@ -20,4 +20,4 @@ class sub_Courses(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('view_sub_course_all')
+        return reverse('our-courses')

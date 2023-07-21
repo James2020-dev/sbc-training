@@ -105,7 +105,8 @@ def Show_Sub_Courses(request, course_id):
     courses = Courses.objects.get(pk=course_id)
     subcourses = courses.sub_courses_set.all()
     return render(request, 'training_app/view_sub_course.html', {
-        'subcourses': subcourses
+        'subcourses': subcourses,
+        'courses': courses
     })
 
 

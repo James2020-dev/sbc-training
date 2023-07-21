@@ -9,6 +9,9 @@ Update Sub Course
     {% csrf_token %}
     {{ form.as_p}}
     <button class="btn btn-primary">Update</button>
+    <br>
+    <br>
+    <a class="btn btn-secondary" href="{% url 'our-courses' %}">Back</a>
 </form>
 </div>
 {% endblock %}

@@ -18,14 +18,14 @@
         <tr align="left">
             <th scope="row">{{ forloop.counter }}</th>
              <td><a href="{% url 'read_sub_course' x.id %}">{{ x.name }}</a> </td>
-            {% if user.is_authenticated %}
+            {% if user.is_superuser %}
              <td><a href="{% url 'update_sub_course' x.pk %}">Edit</a> </td>
             <td><a href="{% url 'delete_sub_course' x.pk %}">Delete</a> </td>
             {% endif %}
         </tr>
          {% endfor %}
 </table>
-{% if user.is_authenticated %}
+{% if user.is_superuser %}
 <strong><a href="{% url 'add-sub-course' %}">Add Sub Course</a></strong>
 {% endif %}
 {% endblock %}

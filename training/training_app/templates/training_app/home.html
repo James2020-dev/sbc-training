@@ -23,13 +23,15 @@
 						<div class="banner-content">
 							<span class="top-title">Best Learning Platform</span>
 							<h1>East Africa Child Rights Trust <span>Network.</span></h1>
-							<p>Welcome to East Africa Child Rights Trust Network. We...Deliver</p>
+<!--							<p>Welcome to East Africa Child Rights Trust Network. We...Deliver</p>-->
 							<div class="banner-btn">
 								{% if user.is_authenticated %}
+								{% if user.is_superuser %}
 								<a href="{% url 'our-courses' %}" class="default-btn">
 									Find Our Modules
 									<i class="ri-search-line"></i>
 								</a>
+								{% endif %}
 								{% endif %}
 							</div>
 						</div>

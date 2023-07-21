@@ -41,7 +41,9 @@
 <!-- End Page Title Area -->
 
 <div class="online-courses-area ptb-100">
+     {% if user.is_superuser %}
     <a class="btn btn-primary" href="{% url 'add_course' %}">Add Module</a><hr>
+    {% endif %}
     <div class="container">
         <div class="row justify-content-center">
             {% for course in course_list %}
@@ -49,16 +51,16 @@
                 <div class="single-courses-item">
                     <div class="courses-img">
                         <a href="courses.html">
-                            <img src="{% static 'training_app/images/courses/courses-1.jpg' %}" alt="Image">
+                            <img src="{% static 'training_app/images/courses/banner2.png' %}" alt="Image">
                         </a>
 
                         <ul>
                             <li>
                                 <a href="{% url 'sub_courses3' course.pk %}">Detail</a>
                             </li>
-                            <li class="bg-5696fa">
+<!--                            <li class="bg-5696fa">-->
 <!--                                <span>-15%</span>-->
-                            </li>
+<!--                            </li>-->
                         </ul>
 
                         <img src="{% static 'training_app/images/courses/teacher-1.png' %}" alt="Image" class="teacher">
@@ -89,9 +91,13 @@
                     </div>
                     <ul class="courses-fee d-flex justify-content-between">
                         <li>
-                             <a class="btn btn-sm btn-primary" href="{% url 'update_course' course.id %}">Edit</a>
+                            {% if user.is_superuser %}
+                             <a class="btn btn-sm btn-primary" href="{% url 'update_course' course.id %}">Edit..</a>
+                            {% endif %}
                         </li>
+                        {% if user.is_superuser %}
                         <li><a class="btn btn-sm btn-danger" href="{% url 'delete_course' course.pk %}">Delete</a></li>
+                         {% endif %}
                         <li>
                             <a href="{% url 'sub_courses3' course.pk %}" class="read-more">
 
