@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-iq_n4-kk2=n$ue!dww(*%d+(%=9tjcxwq*nc)g6&2vn4h--h0)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://sbc-training-e0452635bc57.herokuapp.com/']
 
 
 # Application definition
