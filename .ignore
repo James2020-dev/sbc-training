@@ -1,2 +1,4 @@
-ENV/
+VENV/*
 .idea/
+*.pyc
+FromThePath/htmlcov
